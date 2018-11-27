@@ -1,0 +1,16 @@
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\bin\Debug\COMMON.dll
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\bin\Debug\COMMON.pdb
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\bin\Debug\COMMON.xml
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\obj\Debug\COMMON.Resources.resources
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\obj\Debug\COMMON.vbproj.GenerateResource.Cache
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\obj\Debug\COMMON.dll
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\obj\Debug\COMMON.xml
+E:\案件\AutoMakeCode\AutoCode - NEW\slnAC\COMMON\obj\Debug\COMMON.pdb
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\bin\Debug\COMMON.dll
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\bin\Debug\COMMON.pdb
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\bin\Debug\COMMON.xml
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\obj\Debug\COMMON.Resources.resources
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\obj\Debug\COMMON.vbproj.GenerateResource.Cache
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\obj\Debug\COMMON.dll
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\obj\Debug\COMMON.xml
+D:\ILIKEMAKE\AutoCode---NEW\slnAC\COMMON\obj\Debug\COMMON.pdb
