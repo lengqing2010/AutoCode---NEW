@@ -1,0 +1,63 @@
+<img id="img1" width="150" height="100">
+<script type="text/javascript">
+function UrlSearch() 
+{
+   var name,value; 
+   var str=location.href; 
+   var num=str.indexOf("?") 
+   str=str.substr(num+1); 
+   var arr=str.split("&"); 
+   for(var i=0;i < arr.length;i++){ 
+    num=arr[i].indexOf("="); 
+    if(num>0){ 
+     name=arr[i].substring(0,num);
+     value=arr[i].substr(num+1);
+     this[name]=value;
+     } 
+    } 
+} 
+
+//写真名前とサイズを取得する
+var Request=new UrlSearch(); 
+var oImg;
+var mWidth;
+var mHeight;
+	oImg = document.getElementById("img1");
+	oImg.src=Request.name;						//写真名前
+	mWidth = oImg.width;						//写真長さ
+	mHeight = oImg.height;						//写真高さ
+
+//識別子使用判断：
+//ユーザー新ウインド長さ＞高さ,高さを基に表示する；
+//ユーザー新ウインド長さ＜高さ,長さを基に表示する；
+	if (document.body.clientWidth > document.body.clientHeight){
+		oImg.height = document.body.clientHeight*0.9;
+		oImg.width = oImg.height*mWidth/mHeight*0.9;
+
+	}else{
+		oImg.width = document.body.clientWidth*0.9;
+		oImg.height = oImg.width*mHeight/mWidth*0.9;
+
+	}
+
+//画面サイズ変化すると、写真サイズも変化
+window.onresize = function(){
+	var w;
+	var h;
+	w = document.body.clientWidth;		//ユーザーPC長さ
+	h = document.body.clientHeight;		//ユーザーPC高さ
+
+//識別子使用判断：
+//ユーザー新ウインド長さ＞高さ,高さを基に表示する；
+//ユーザー新ウインド長さ＜高さ,長さを基に表示する；
+	if (w>h){
+		oImg.height = document.body.clientHeight*0.9;
+		oImg.width = oImg.height*mWidth/mHeight*0.9;
+
+	}else{
+		oImg.width = document.body.clientWidth*0.9;
+		oImg.height = oImg.width*mHeight/mWidth*0.9;
+
+	}
+}
+</script>

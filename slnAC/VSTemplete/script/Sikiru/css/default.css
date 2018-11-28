@@ -1,0 +1,37 @@
+.title{
+font-size:11pt;
+color:#800000;
+text-align:center;
+background-color:#B0E0E6;
+text-align:center;
+border :dashed 1px silver;
+}
+.aa{font-size:12px; color:336600;}
+.aa:hover{font-size:12px;
+	color: red;
+	font-weight: bold;
+	text-align:center;
+border :dashed 1px silver;
+	}
+
+.tdfont{
+font-size:12px;
+color:#336600;
+text-align:center;
+border :dashed 1px silver;
+}
+
+.titleBack{
+background-color:#CCFFFF;
+text-align:center;
+border :dashed 1px silver;
+}
+.downtitle{
+background-color:#FFCCFF;
+text-align:center;
+border :dashed 1px silver;
+}
+.mtbl td
+{
+	border :dashed 1px silver;
+}

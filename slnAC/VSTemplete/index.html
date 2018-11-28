@@ -2,61 +2,1218 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <title></title>
     <style>
         .panel{
-            width:800px;
+            font-family: "微软雅黑";
+            width:600px;
             height:350px;
             margin:0 auto 0 auto;
-            background-color:#ccc;
+            margin-left:120px;
+            /*visibility:hidden;*/
+        }
+        .panel3{
+            font-family: "微软雅黑";
+            width:800px;
+            height:1350px;
+            font-size:12px;
+            margin-top:1000px;
+            /*visibility:hidden;*/
+        }
+        .logo{
+            position:absolute;
+            width:200px;
+            height:100px;
+            left:0px;
+            z-index:100;
+            padding:5px;
+           
+            color:#808080;
+                        text-align:center;
+            vertical-align:central;
+            font-size:12px; background-color:#eee;
+        }
+        .menu{
+            position:absolute;
+            width:200px;
+            height:100px;
+            top:180px;
+            left:0px;
+            z-index:100;
+            
+
+        }
+        .menu_btn{
+            
+            font-size:20px;
+            text-align:center;
+            vertical-align:central;
+            width:200px;
+            height:40px;
+            background-color:#000;
+            color:#fff;
+                        padding:5px;
         }
 
+html, body {
+	height:100%;
+}
+body {
+	width: 100%;
+	background: #eee;
+	overflow: auto;
+}
+
+#header{
+	position: absolute;
+	z-index: 2000;
+	width: 235px;
+	top: 20px;
+    left:0;
+}
+#header h1{
+	font-size: 10px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #666;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+	padding: 10px;
+	background: #fff;
+    color:#808080;
+    text-align:center;
+    vertical-align:central;
+    font-size:12px; 
+    background-color:#eee;
+}
+#navigation {
+	margin-top: 10px;
+	width: 235px;
+	display:block;
+	list-style:none;
+	z-index:3;
+}
+ .linka{
+
+
+}
+ a:hover {
+	background: #eee;
+    color:#000;
+}
+.content{
+	right: 40px;
+	left: 280px;
+	top: 0px;
+	position: absolute;
+	padding-bottom: 30px;
+}
+ h2{font-family: 微软雅黑;
+	font-size: 20px;
+	margin-top: 0px;
+    margin-left:10px;
+	color: #000;
+
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+}
+.content p{
+	font-size: 18px;
+	padding: 10px;
+	line-height: 24px;
+	color: #fff;
+	display: inline-block;
+	background: black;
+	padding: 10px;
+	margin: 3px 0px;
+}
+.panel1{
+	min-width: 100%;
+	height: 98%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-top: -150%;
+	position: absolute;
+	background: #000;
+	box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
+	z-index: 2;
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+}
+.panel:target{
+	margin-top: 0%;
+	background-color: #ffcb00;
+}
+#home:target ~ #header #navigation #link-home,
+#portfolio:target ~ #header #navigation #link-portfolio,
+#about:target ~ #header #navigation #link-about,
+#contact:target ~ #header #navigation #link-contact{
+	background: #000;
+	color: #fff;
+}
+
+        .jq_link {
+            background-color: transparent;
+            color: #fff;
+            text-align: center;
+            display: block;
+            line-height: 20px;
+            padding: 0px 20px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+            font-size: 12px;
+            height:20px;
+
+font-family: 微软雅黑;
+	font-size: 14px;
+	margin-top: 0px;
+    margin-left:10px;
+	color: #fff;
+
+	text-shadow: 0px 1px 1px #aaa;
+        }
+
+        .top-head {
+            /*position: fixed;*/
+            width: 810px;
+            height: auto;
+            overflow-y: auto;
+            min-height: 30px;
+            line-height: 30px;
+            background-color: #333;
+            z-index: 1000;
+            margin:0 auto 0 auto;
+            margin-top:-10px;
+
+            
+        }
+        .left-menu {
+
+font-family: 微软雅黑;
+	font-size: 12px;
+	color: #000;
+
+	text-shadow: 0px 1px 1px #fff;
+
+        }
+
+        .FrontFontTitle{
+
+            padding:2px;
+            padding-left:0px;            
+            color:#000;
+            font-weight:bold;
+
+font-family: 微软雅黑;
+	font-size: 14px;
+	margin-top: 10px;
+    margin-left:10px;
+	color: #000;
+
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+        }
+    .FrontFontText {
+        padding-left: 20px;
+        font-family: 微软雅黑;
+        font-size: 12px;
+        color: #444;
+        text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+        line-height:20px;
+    }
+
+
     </style>
+    <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
 </head>
 <body>
-    <div class="panel" style="overflow:hidden;">
-        <img alt="" src="img/01.jpg" style="width:100%;" />
+
+<iframe class="fra1" style="width:100%;height:100%;border:5px solid #000;background-color:#000; position:absolute; left:0px; top:0px; z-index:999999;" name="iframe_a"
+        frameborder="yes" border="11" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"
+        src="texiao/html5-map-distribute-animation/index.html"></iframe>
+
+
+<div class="top-head" style="background-color:#fff;">
+    <table border="0" style="width:100%;border:0px none #fff;  " cellspacing="0"  >
+
+        <tr>
+            <td style="background-color:#ffcb00; padding:5px;left:0;text-align:center;height:40px;border-style:none; ">
+                <img alt="" src="img/h_logo.png" style=" width:90px; height:40px;border-style:none;"/>
+            </td>
+<!--            <td style="background-color:#000; padding:5px;left:0;text-align:center;height:80px; width:100px;border-style:none; ">
+
+                <iframe class="fra3" style="width:100px;height:80px;border:5px solid #000;background-color:#000;"
+                     
+
+        frameborder="yes" border="11" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"
+        src="texiao/html5-map-distribute-animation/index2.html"></iframe>
+
+
+            </td>-->
+            <!--background-color:#ffcb00;-->
+            <td style="background-color:#fff;text-align:center; border-style:none;" colspan="3" ><h2>骊住通世泰建材(大连)有限公司 <br />信息系統部</h2></td>
+        </tr>
+        <tr style="background-color:#333; vertical-align:middle; line-height:20px;height:20px; padding-top:4px;">
+            <!--<td><a class="jq_link" href="" onclick="">HOME</a></td>-->
+            <td><a class="jq_link" href="" onclick="">HOME</a></td>
+            <td><a class="jq_link" href="#" onclick="$('#m99').focus();$('#m1').focus();$('body').scrollTop($('body').scrollTop()-210);return false;">部門紹介</a></td>
+            <td><a class="jq_link" href="#" onclick="$('#m99').focus();$('#m2').focus();$('body').scrollTop($('body').scrollTop()-10);return false;">情報システムメンバー </a></td>
+            <td style="width:200px;">
+                <a class="jq_link" href="script\Sikiru\files\dalian_2018.xls" target="blank">大連カレンダー <img border="0" src="pic/New.gif"></a>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+
+<div style="position:relative;margin:0 auto 0 auto;width:810px;height:600px;">
+    <div class="jq_pic_div" style="">
+        <iframe class="fra2" style="width:800px;height:600px;border:5px solid #333;background-color:#333;" name="iframe_a"
+                frameborder="yes" border="11" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"
+                src="pictureShow/index.html"></iframe>
     </div>
-    <div class="panel" style=" height:120px; background-color:transparent; text-align:center;">
-        <table style="margin:-40px auto 0 10px;">
+
+    <div class="" style="position:relative;margin:10px auto 0 0;width:800px;height:600px;">
+        <table style="width:100%">
             <tr>
-                <td style="border-top:solid;border-left:solid;border-right:solid;border-bottom:solid; height:80px; background-color:#fff;">
-                    <img alt="" src="img/h_logo.png" style="width:80%; height:80%;" />
-          
+                <td class="FrontFontTitle" style="width:50%" >組織名</td>
+                <td class="FrontFontTitle" style="">人員構成・組織図 </td>
+            </tr>
+            <tr>
+                <td class="FrontFontText" style="vertical-align:top;" >
+中国語表記 ： <br /><br />
+&nbsp;&nbsp;骊住通世泰建材(大连)有限公司<br />
+&nbsp;&nbsp;信息系統部 <br /><br />
+英 　語 　名 ： <br /><br />
+&nbsp;&nbsp;LIXIL Manufacturing (Dalian) Corporation<br />               
+&nbsp;&nbsp;INFORMATION SYSTEMS DEPARTMENT
                 </td>
+                
+                <td class="FrontFontText"  style="vertical-align:top;">大連開発の組織図<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;開発部隊及び日本とやりとりするスタッフ<br />
+                    <br />【総経理】<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高木 純
+                    <br />【部長】<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中川 幸照
+                    <br />【課長】<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;徐 良玖 <br />
+                </td>
+                
+   
+            </tr>
+        
 
+            <tr>
+                
+                <td class="FrontFontTitle"  >沿革 </td>
+                <td class="FrontFontTitle"  >大連開発端末のスペック紹介</td>
+            </tr>
+            <tr>
+                
+                <td class="FrontFontText">
+                    2001年4月25日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大連工場成立<br />
+                    2005年11月7日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大連IT中心成立<br />
+                </td>
+                
+                <td class="FrontFontText">
 
-                <td style="vertical-align:bottom;">
-            <a style=" color: #333; height: 40px; width:800px; font-size: 22px; font-weight: bold; font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'MS PGothic', Sans-serif; ">
-                骊住通世泰建材(大连)有限公司 信息系統部
-            </a>
-       
+                    ・ＣＰＵ ：2.8Ghz <br />
+                    ・メモリ ：４G <br />
+                    ・ＯＳ ： windows７</br>
+                    
+                    
                 </td>
             </tr>
 
+            <tr>
+                
+                <td class="FrontFontTitle"  colspan="2">更新履歴 <img border="0" src="pic/New.gif"> </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                
+                <td class="FrontFontText" colspan="2" style="height:440px;">
+        <div style="height:360px;overflow-y:scroll; margin-top:-40px;">
 
+                        (2018年10月度)10/22(月)～10/23(火) 安全課の手配により、情報システム部健康診断を行うこと。<img border="0" src="pic/New1.gif">
+                        <br /><br />(2018年9月度)IT棟全体に避難訓練演習を行いました。
+                        <br /><br />(2018年8月度)FYE2018 成果発表大会に参加した李毅さんに表彰、おめでとうございます。
+                        <br /><br />(2018年7月度)7/2&nbsp;&nbsp;情報システム部「人事異動及び任命」のお知らせ
+                        <br />中川 幸照 (敬称略)<br />情報システム部 部付部長⇒部長；<br />高橋 賢司(敬称略)<br />業務改善室 室長
+                        <br /><br />(2018年7月度)情報システム部組織変更<br />生産・購買GをSC・SAP基盤係に統括されました。
+                        <br /><br />(2018年7月度)情報システム部2名新卒入社(営業支援Gの王磊、事業会社Gの王維山)、おめでとうございます。
+                        <br /><br />(2018年6月度)<a href="./HPpic/HPNewImage.html?name=20180619RPA.JPG" target="blank">
+                            6/19～6/20&nbsp;&nbsp;
+                            RPA教育実施するために、LIXIL情報システム本部の竹内 瑞樹様、尾上 浩司様、常 鑫様大連に来られました。
+                        </a>
+                        <br /><br />(2018年6月度)<a href="./HPpic/HPNewImage.html?name=20180613okamotoIT.JPG" target="blank">
+                            6/13&nbsp;&nbsp;
+                            LIXIL本社の岡本経理本部長&nbsp;IT中心に来られました。
+                        </a>
+                        <br /><br />(2018年6月度)<a href="./HPpic/HPNewImage.html?name=20180612softmeeting.JPG" target="blank">
+                            6/12&nbsp;&nbsp;
+                            第十六回中国国際ソフトウェアと情報サービス交易会に中川部付部長ご出席いただきました.
+                        </a>
+                        <br /><br />(2018年6月度)6/1&nbsp;&nbsp;情報システム部 部付部長 <br />中川 幸照 (敬称略)の情報を更新しました。 <br />(方針管理Ｔの画面参照)
+                        <br /><br />(2018年6月度)<a href="./HPpic/HPNewImage.html?name=20180601pann1.JPG" target="blank">
+                            6/1&nbsp;&nbsp;
+                            情報システム部 潘娜さん昇格、おめでとうございます。
+                        </a>
+                        <br /><br />(2018年5月度)5/20&nbsp;&nbsp;第十六回大連国際ウォーキング大会に高木総経理と中川部付部長も一緒にご参加いただきました.
+                        <br />皆さんは疲れたけど楽しかったです。
+                        <br /><br />((2018年5月度)5/9&nbsp;&nbsp;大連のカレンダー変更 <br /><a href="script\Sikiru\files\dalian_2018.xls" target="blank">大連のカレンダー(2018年度)</a>
+                        <br />大連工場の出勤日変更(情報Ｓ部に影響なし)：<br />5/19(土)休み⇒出勤；<br />5/21(月)出勤⇒休み
+                        <br /><br />(2018年5月度)5/8&nbsp;&nbsp;情報システム部 部付部長 <br />中川 幸照 (敬称略)大連着任されました。<br />どうぞよろしくお願いします。
+                        <br /><br />(2018年4月度)<a href="script\Sikiru\files\dalian_2018.xls" target="blank">大連のカレンダー(2018年度)</a>
+                        <br /><br />(2016年4月度)<a href="file://10.160.200.11/publicweb/ppt/2016LIXILcalendar.pdf" target="blank">日本のカレンダー(2016年度)</a>
+                        <br /><br />(2016年１月度)<a href="file://10.160.200.11/publicweb/ppt/dalian_2016.xls" target="blank">大連のカレンダー(2016年度)</a>
+                        <br /><br />(6月度)<a href="file://10.160.200.11/publicweb/ppt/LIIXL本部_2015.xls">LIXIL情報Ｓ本部暦更新</a>
+                        <br /><br />(6月度)<a href="file://10.160.200.11/publicweb/ppt/dalian_2015.xls">大連のカレンダー更新</a>
+                        <br /><br />(13年5月度)<a href="./HPpic/HPNewImage.html?name=20130516shezhangBig.JPG" target="blank">2013年5月16日 佐藤本部長、守屋様、哘様来訪</a>
+                        <br /><br />(13年2月度)<a href="./HPpic/HPNewImage.html?name=kennethBig.jpg" target="blank">2013年2月 LIXIL ASIA CEO ケネス(伍健賢)様 大連に来訪</a>
+                        <br /><br />(13年2月度)<a href="#historyKG">2013年2月1日付 大連情報システム部の新組織</a>
+                        <br /><br />(11月度)<a href="./HPpic/HPNewImage.html?name=20121109yagishezhangBig.JPG" target="blank">2012年11月09日 (株)LIXIL 八木副社長大連に来訪</a>
+                        <br /><br />(7月度)<a href="./HPpic/HPNewImage.html?name=20120730shezhangBig.JPG" target="blank">2012年7月30日 佐藤社長来訪</a>
+                        <br />(7月度)<a href="#historyKG">新卒18名入社(おめでとう～)</a>
+                        <br /><br />(6月度)<a href="#historyKG">2012年7月1日付 情報システム部組織変更</a>
+                        <br />(6月度)<a href="./HPpic/HPNewImage.html?name=2012basketGuanjun.JPG" target="blank">情報システム男子バスケットチーム優勝</a>
+                        <br /><br />(5月度)金弘花様 11年度ＩＴ推進本部改善事例大会『最優秀賞』
+                        <br />(5月度)<a href="./HPpic/HPNewImage.html?name=lixilinax.jpg" target="blank">藤崎様 高橋様 大連に来られた</a>
+                        <br /><br />(4月度)<a href="script/hyousyou/hyousyou.html">表彰事例ページ更新</a>
+                        2011年度業績表彰 生産物流係
+                        2011年度APM表彰 商品開発係
+                        <br /><br />(3月度)<a href="./HPpic/HPNewImage.html?name=kawaiBig.JPG" target="blank">川井 様来連 写真１枚公開</a>
+                        <br />(3月度)<a href="./HPpic/HPNewImage.html?name=huangchaoBig.JPG" target="blank">黄超 様来連 写真１枚公開</a>
+                        <br /><br />(2月度)<a href="#historyKG">8名のメンバー新入社(おめでとう～)</a>
+                        <br /><br />(1月度)<a href="./script/bunka/ITbunka.html">娯楽活動ページ更新</a>
+                        <br /><br />(12月度)<a href="./script/bunka/ITbunka.html">娯楽活動ページ更新</a>
+                        <br /><br />(11月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        佐藤社長診断会の２改善事例追加
+                        <br />(11月度)<a href="./ITISsindankai/ITISraihou.html">佐藤社長来訪ページ更新</a>
+                        大連側推進活動８事例追加
+                        <br />(11月度)<a href="./HPpic/HPNewImage.html?name=1117shezhangBig.jpg" target="blank">佐藤社長、米山部長来連 写真１枚公開</a>
+                        <br />(11月度)<a href="./HPpic/HPNewImage.html?name=jinziBig.JPG" target="blank">金子様来連 写真１枚公開</a>
+                        <br /><br />(10月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議1事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br />(10月度)<a href="./HPpic/HPNewImage.html?name=jiubaoBig.jpg" target="blank">久保様来連写真１枚公開</a>
+                        <br />(10月度)<a href="./HPpic/HPNewImage.html?name=yosidaBig.jpg" target="blank">吉田様来連研修写真１枚公開</a>
+                        <br /><br />(9月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議1事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業１係改善報告1事例
+                        <br /><br />(8月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議1事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br /><br />(7月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議2事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br />(7月度)<a href="./HPpic/HPNewImage.html?name=FUKAZAWABig.jpg" target="blank">深沢さん様来連写真１枚公開</a>
+                        <br />(7月度)<a href="./script/bunka/ITbunka.html">娯楽活動ページ更新</a>
+                        <br /><br />(6月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議1事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />(6月度)<a href="./HPpic/HPNewImage.html?name=mimaBig.jpg" target="blank">美馬様来連研修写真１枚公開</a>
+                        <br />(6月度)<a href="./HPpic/HPNewImage.html?name=toriiBig.jpg" target="blank">鳥井様来連研修写真１枚公開</a>
+                        <br /><br />(5月度)<a href="./jinzaiPJ/rencaiPJ.htm">人材育成ページ公開</a>
+                        <br />(5月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議3事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br /><br />(4月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議1事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br /><br />(3月度)<a href="script/hyousyou/hyousyou.html">表彰事例ページ更新</a>
+                        <br />(3月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議3事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br /><br />(2月度)<a href="script/hyousyou/hyousyou.html">表彰事例ページ更新</a>
+                        <br />(2月度)<a href="./ITISsindankai/ITISraihou.html">佐藤社長来訪ページ更新</a>
+                        大連側推進活動3事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;業務と技術を勉強し、ラボ後の生産性を向上させる
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新型案件の開発に応じる活動事例紹介
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IT人材採用活動紹介
+                        <br />(2月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議3事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br /><br />(1月度)<a href="./HPpic/HPNewImage.html?name=zben_0106.jpg" target="blank">塚本様来連写真１枚公開</a>
+                        <br />(1月度)<a href="./script/bunka/ITbunka.html">娯楽活動ページ更新</a>
+                        <br />(1月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議3事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産物流係改善報告1事例
+                        <br /><br />(12月度)<a href="./HPpic/HPNewImage.html?name=bin98_1128.jpg" target="blank">浜島様、久保様来連写真１枚公開</a>
+                        <br />(12月度)<a href="script/jsb/TOSTEM_EDP_HP.HTML">採用/育成ページ更新</a>
+                        <br />(12月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議8事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産物流係改善報告1事例
+                        <br /><br />(11月度)<a href="./HPpic/HPNewImage.html?name=alc.jpg" target="blank">ITIS池田 寛之様来連写真１枚公開</a>
+                        <br />(11月度)<a href="script/jsb/TOSTEM_EDP_HP.HTML">採用/育成ページ更新</a>
+                        <br />(11月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議5事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br /><br />(10月度)<a href="./HPpic/HPNewImage.html?name=topOn.jpg" target="blank">ITIS堀越様 池田様来連写真１枚公開</a>
+                        <br />(10月度)<a href="script/jsb/TOSTEM_EDP_HP.HTML">採用/育成ページ更新</a>
+                        <br />(10月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議5事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産物流係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br /><br />(9月度)<a href="script/jsb/TOSTEM_EDP_HP.HTML">採用/育成ページ更新</a>
+                        <br />(9月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議4事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産物流係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告1事例
+                        <br /><br />(8月度)<a href="script/bunka/ITbunka.html">10年度IT企業文化活動</a>
+                        <br />(8月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議3事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />(8月度)<a href="#historyKG">通訳&nbsp;韓丹さん入社</a>
+                        <br />(8月度)<a href="./HPpic/HPNewImage.html?name=yanguBig.jpg" target="blank">ITIS塩谷俊平様来連写真１枚公開</a>
+                        <br /><br />(7月度)<a href="script/bunka/ITbunka.html">10年度第八届大連文化週活動</a>
+                        <br />(7月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議4事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産物流係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />(7月度)<a href="#historyKG">新卒15名のメンバー入社</a>
+                        <br /><br />(6月度)<a href="./ITISsindankai/ITISraihou.html">10年度佐藤社長来訪</a>
+                        大連側推進活動4事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大連品質向上活動報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大連生産性向上活動報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大連標準化活動報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大連ラボ活動報告1事例
+                        <br />(6月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議5事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係改善報告1事例
+                        <br />(6月度)新入社員3人
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産物流係&nbsp;&nbsp;(023ライン)李 敏
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係&nbsp;&nbsp;(029ライン)于 晟
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発係&nbsp;&nbsp;(029ライン)李 斐然
+                        <br /><br />(5月度)<a href="script/hyousyou/hyousyou.html">表彰事例ページ更新</a>
+                        2009年度APM表彰、業績表彰公開、<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;おめでとうございます～
+                        <br />(5月度)<a href="./HPpic/HPNewImage.html?name=licl0510Big.jpg" target="blank">ITIS李成龍様来連写真１枚公開</a>
+                        <br />(5月度)<a href="newHyoujunPJ.html">大連開発標準化ページ更新</a>
+                        <br />(5月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議6事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産・物流システム係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事業会社係改善報告2事例
+                        <br /><br />(4月度)<a href="Q.html">大連品質見える化ページ公開</a>
+                        各個人の品質意識向上を狙いとして、<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各個人別の品質実績を公開する。
+                        <br />(4月度)<a href="newHyoujunPJ.html">大連開発標準化ページ更新</a>
+                        <br />(4月度)<a href="kaizenJirei.html">改善/活動事例ページ更新</a>
+                        成果発表会議6事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発1係改善報告2事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;営業システム開発2係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人事経理係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生産・物流システム係改善報告1事例
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品開発システム係改善報告1事例
+                        <br /><br />(3月度)大連開発標準化ＰＪページ更新
+                        <a href="newHyoujunPJ.html">新バージョンＨＰ更新、便利に理解できる</a>
+                        <br />(3月度)改善/活動事例ページ更新
+                        成果発表会議6事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">営業システム開発1係改善報告1事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">営業システム開発2係改善報告1事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">事業会社係改善報告2事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">生産・物流システム係改善報告1事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">商品開発システム係改善報告1事例</a>
+                        <br /><br />(2月度)ITIS大賀様来連
+                        <a href="./HPpic/HPNewImage.html?name=oogaBig.jpg" target="blank">大賀さん来連時の写真１枚</a>
+                        <br />(2月度)改善/活動事例ページ更新
+                        成果発表会議8事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">営業システム開発1係改善報告1事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">営業システム開発2係改善報告2事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">事業会社係改善報告2事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">生産・物流システム係改善報告1事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">商品開発システム係改善報告1事例</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">人事経理システム係改善報告1事例</a>
+                        <br /><br />(1月度)<a href="#historyKG">大連開発の組織図変更</a>
+                        
+                            ◆営業システム開発1係<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◆営業システム開発2係<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◆商品開発システム係<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◆人事経理システム係<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◆生産・物流システム係<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◆事業会社システム係
+                        
+                        <br />(1月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">方針企画室 趙虹媛さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">025ライン 李毅さんの改善報告</a>
+                        <br />(1月度)娯楽活動ページ更新
+                        <a href="./script/bunka/ITbunka.html">大連のホワイトクリスマス</a>
+                        <a href="./script/bunka/ITbunka.html">大連の忘年会</a>
+                        <br /><br />(12月度)大連開発標準化ページ更新
+                        
+                            <a href="PJdoc.html">【開発原紙】追加</a><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;案件振返原紙<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;見積書原紙<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PJ計画書兼完了報告書原紙
+                        
+                        <a href="tejunSyo.html">【会議室予約標準書】追加</a>
+                        <br />(12月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">023ライン 林威さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">022ライン 金永子さんの改善報告</a>
+                        <br />(12月度)娯楽活動ページ更新
+                        <a href="./script/bunka/ITbunka.html">大連の霧と晴天気時</a>
+                        <br /><br />(11月度)INAX坪井取締役と木全部長、<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITIS佐藤社長、斉藤部長来訪
+                        <a href="./HPpic/HPNewImage.html?name=inaxBig.jpg" target="blank">来連時の写真１枚</a>
+                        <br />(11月度)ITIS浜島様来連
+                        <a href="./HPpic/HPNewImage.html?name=raboBig.jpg" target="blank">浜島さん来連時の写真１枚</a>
+                        <br />(11月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">022ライン 鄭旭さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">023ライン 呉玲さんの改善報告</a>
+                        <br /><br /><a href="#historyKG">(10月度)大連組織の方針企画室が創立される</a>
+                        <br />(10月度)大連標準化開発フロー改訂第一弾
+                        【開発フロー】(海外開発依頼書関連部分追加)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="flow.html">09年09月改訂版</a>
+                        <br />(10月度)ITIS宮田様、屈冠伯様来訪
+                        <a href="./HPpic/HPNewImage.html?name=cobolBig.jpg" target="blank">二人来連時の写真１枚</a>
+                        <br />(10月度)ITIS藤崎様、岡井様、立川様来訪
+                        <a href="./HPpic/HPNewImage.html?name=3ninBig.jpg" target="blank">三人来連時の写真１枚</a>
+                        <br /><br />(9月度)大連開発標準化ＰＪページ公開
+                        【開発フロー】<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="flow.html">09年08月第一版</a>
+                        <br />【チェックリスト】<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cl.html">09年08月第一版</a>
+                        <br />【開発ツール】<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tool.html">09年08月第一版</a>
+                        <br />(9月度)<a href="./ITISsindankai/ITISraihou.html">佐藤社長来訪ページ公開</a>
+                        <br />(9月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">028ライン 徐妍さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">024ライン 高瑜さんの改善報告</a>
+                        <br /><br />(8月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">023ライン 譚愷さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">024ライン 呉営さんの改善報告</a>
+                        <br /><br />(7月度)娯楽活動ページ更新
+                        <a href="./script/bunka/ITbunka.html">大連第七届文化週写真追加</a>
+                        <br /><a href="./script/bunka/ITbunka.html">7月22日大連日食写真追加</a>
+                        <br />(7月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">028ライン 崔長喜さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">029ライン 潘娜さんの改善報告</a>
+                        <br /><br />(6月度)日本語教育ページ公開
+                        <a href="nihongoKyoiku.html">日本語授業紹介</a>
+                        <br /><a href="nihongoKyoiku.html">日本語授業活動</a>
+                        <br />(6月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">025ライン 李毅さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">027ライン 楊文娟さんの改善報告</a>
+                        <br /><br />(5月度)表彰事例ページ公開
+                        <a href="./script/hyousyou/hyousyou.html">APM表彰</a>
+                        <br /><a href="./script/hyousyou/hyousyou.html">業績表彰</a>
+                        <br /><a href="./script/hyousyou/hyousyou.html">TIMES表彰</a>
+                        <br />(5月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">024ライン 趙海涛さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">029ライン 李丹さんの改善報告</a>
+                        <br /><br />(4月度)改善/活動事例ページ更新
+                        成果発表会議２事例追加
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">024ライン 王小雷さんの改善報告</a>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="kaizenJirei.html">025ライン 李毅さんの改善報告</a>
+                        <br />(4月度)大連ホームページ更新
+                        情報システム部メンバーと組織紹介
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#historyKG">情報システム部メンバー</a>
+                        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                    </div>
+                    
+                </td>
+            </tr>
         </table>
 
+        <table class="FrontFontTitle" style="width:800px">
+            <tr>
+                <td>情報システムメンバー</td>
+                <td style="text-align:left;">
+                    
+                </td>
+                <td style="text-align:right;"><span style="color: white"><a href="#" onclick="history.back()" class="link">表紙へ戻る</a>&nbsp;</span></td>
+            </tr>
+        </table>
+        <table width="800px" class="left-menu">
+            <tr>
+                <td width="225px" valign="top">
+                    <table>
+                        <tr>
+                            <td class="FrontFontTitle" style="width:250px" ><font>◆営業受注見積係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：王 登明)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk001" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk021" href="#historyKG" onclick="SelectGamen(1)" class="mnlinecode"><b>∴営業1G</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk022" href="#historyKG" onclick="SelectGamen(2)" class="mnlinecode"><b>∴営業2G</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk023" href="#historyKG" onclick="SelectGamen(3)" class="mnlinecode"><b>∴営業3G</b></a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="FrontFontTitle" style="width:250px"><font>◆営業業績管理係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：崔 長喜)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk004" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk024" href="#historyKG" onclick="SelectGamen(4)" class="mnlinecode"><b>∴営業支援G</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk036" href="#historyKG" onclick="SelectGamen(36)" class="mnlinecode"><b>∴工事G</b><a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="FrontFontTitle" style="width:250px"><font>◆SC・テクノロジー・ビル係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：毕 薇)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk005" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk025" href="#historyKG" onclick="SelectGamen(5)" class="mnlinecode"><b>∴営業ビルG</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk026" href="#historyKG" onclick="SelectGamen(6)" class="mnlinecode"><b>∴物流G</b><a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk027" href="#historyKG" onclick="SelectGamen(7)" class="mnlinecode"><b>∴商品G</b><a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="FrontFontTitle" style="width:250px"><font>◆事業会社係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：陶 瑜)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk008" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk028" href="#historyKG" onclick="SelectGamen(8)" class="mnlinecode"><b>∴事業会社G</b></a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="FrontFontTitle" style="width:250px"><font>◆事業拡大係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：孫 鳳玲)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk009" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk029" href="#historyKG" onclick="SelectGamen(9)" class="mnlinecode"><b>∴業務拡大G</b></a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="FrontFontTitle" style="width:250px"><font>◆SC・SAP基盤係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：呉 殿博)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk010" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk030" href="#historyKG" onclick="SelectGamen(10)" class="mnlinecode"><b>∴SAP開発G</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk038" href="#historyKG" onclick="SelectGamen(38)" class="mnlinecode"><b>∴生産・購買G</b></a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="button" style="width:250px"><font>◆業務サポート係</font></td>
+                        </tr>
+                        <tr>
+                            <td><font color="#666666" size="2">(責任者：李 毅)</font></td>
+                        </tr>
+                    </table>
+                    <div id="fk011" style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk031" href="#historyKG" onclick="SelectGamen(11)" class="mnlinecode"><b>∴共通基盤G</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk037" href="#historyKG" onclick="SelectGamen(37)" class="mnlinecode"><b>∴プラグインG</b><a></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="button" style="width:250px"><font>◆方針管理T</font></td>
+                        </tr>
+                    </table>
+                    <div style="margin-top:-5px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <font color="#CC3300" size="2"><a id="fk000" href="#historyKG" onclick="SelectGamen(0)" class="mnlinecode"><b>∴方針管理T</b></a></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="TOSTEM_EDP_HP.HTML#historyKG" onclick="SelectGamen(100)" style="text-decoration:none;">
+                                        <font color="#330099" size="2"><b>∴メンバー一覧へ</b><font>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                </td>
+                <td style="width:670px; vertical-align :top ; text-align :left ;">
+                    <iframe id="rightFrame" width="670px" height="1200px" frameborder="0" scrolling="no" src="default.html"></iframe>
+                </td>
+            </tr>
+        </table>
     </div>
-
-    aaa<br /><br /><br />
-    <div class="panel">
-    </div>
-    <table>
-        <tr>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-
-
-            </td>
-        </tr>
+</div>
 
 
 
-    </table>
+
+
+    <br />
+    
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+        function SelectGamen(strProperty) {
+            switch (strProperty) {
+                case 0:
+                    document.getElementById("fk000").style.color = "#330099";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "staff.html";
+                    break;
+                case 1:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#330099";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "021.html";
+                    break;
+                case 2:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#330099";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "022.html";
+                    break;
+                case 3:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#330099";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "023.html";
+                    break;
+                case 4:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#330099";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "024.html";
+                    break;
+                case 5:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#330099";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "025.html";
+                    break;
+                case 6:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#330099";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "026.html";
+                    break;
+                case 7:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#330099";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "027.html";
+                    break;
+                case 8:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#330099";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "028.html";
+                    break;
+                case 9:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#330099";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "029.html";
+                    break;
+                case 10:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#330099";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "030.html";
+                    break;
+                case 11:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#330099";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "031.html";
+                    break;
+                case 36:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#330099";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "036.html";
+                    break;
+                case 37:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#330099";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "037.html";
+                    break;
+                case 38:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#330099";
+                    document.getElementById("rightFrame").src = "038.html";
+                    break;
+                case 100:
+                    document.getElementById("fk000").style.color = "#CC3300";
+                    document.getElementById("fk021").style.color = "#CC3300";
+                    document.getElementById("fk022").style.color = "#CC3300";
+                    document.getElementById("fk023").style.color = "#CC3300";
+                    document.getElementById("fk024").style.color = "#CC3300";
+                    document.getElementById("fk025").style.color = "#CC3300";
+                    document.getElementById("fk026").style.color = "#CC3300";
+                    document.getElementById("fk027").style.color = "#CC3300";
+                    document.getElementById("fk028").style.color = "#CC3300";
+                    document.getElementById("fk029").style.color = "#CC3300";
+                    document.getElementById("fk030").style.color = "#CC3300";
+                    document.getElementById("fk031").style.color = "#CC3300";
+                    document.getElementById("fk036").style.color = "#CC3300";
+                    document.getElementById("fk037").style.color = "#CC3300";
+                    document.getElementById("fk038").style.color = "#CC3300";
+                    document.getElementById("rightFrame").src = "default.html";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $(document).ready(function () {
+
+
+            //$(".jq_link").each(function (index, element) {
+            //    var obj = $(this);
+            //    setTimeout(function () {
+            //        $(obj).animate({ top: (index * 60 + 120) + 'px' });
+            //    }, index * 200);
+
+            //});
+
+            $(".fra2").hide();
+            setTimeout(function () {
+
+
+                $(".jq_pic_div").css("height", "300px");
+                $(".fra2").css("height", "300px");
+                $(".fra1").fadeOut(2000);
+                $(".fra2").show();
+                //$(".fra1").hide();
+
+                $(".jq_pic_div").mouseover(function () {
+                    $(".jq_pic_div").css("height", "600px");
+                    //$(".fra2").animate({ height: 600 + 'px' });
+                    $(".fra2").css("height", "600px");
+                });
+
+                $(".jq_pic_div").mouseout(function () {
+                    $(".jq_pic_div").css("height", "300px");
+                    $(".fra2").css("height", "300px");
+                    //$(".fra1,.fra2").animate({ height: 300 + 'px' });
+                });
+
+            }, 100);
+
+
+
+
+            //setTimeout(function () {
+            //    $(".fra1").attr("src", "pictureShow/index.html")
+            //    $(".fra1").fadeIn(200);
+            //}, 4000);
+
+
+
+
+
+        });
+
+
+
+
+    </script>
+
 </body>
 </html>

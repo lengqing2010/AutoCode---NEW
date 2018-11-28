@@ -1,0 +1,206 @@
+ /*Å@BODYÅ@*/
+body {
+	margin: 0px;
+	padding: 0px;
+	background:#ffffff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: crosshair;
+	background-color:snow;
+
+	/*
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#000000);
+	*/
+}
+
+#divHeader
+{
+	height: 100px;
+	width: 800px;
+	background-color: white;
+	text-align: left;
+
+	border: gray solid 1px;
+	border-bottom:#66cccc 0px none;
+
+	
+}
+
+.DivPageTitle
+{
+	position: absolute;
+	width: 800px;
+	top: 370px;
+	height: 4%;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#F5F5F5,endColorStr=#F5F9F5);
+}
+.DivPageTitle2
+{
+	position: absolute;
+	width: 800px;
+	top: 590px;
+	height: 4%;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#F5F5F5,endColorStr=#F5F9F5);
+}
+.DivPageTitle3
+{
+	position: absolute;
+	width: 800px;
+	top: 5280px;
+	height: 4%;
+	/*
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#F5F5F5,endColorStr=#F5F9F5);
+	*/
+}
+.DivPageTitle4
+{
+	position: absolute;
+	width: 800px;
+	top: 7000px;
+	height: 4%;
+	/*
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#F5F5F5,endColorStr=#F5F9F5);
+	*/
+}
+.FrontBlackTitle
+{
+	width:2px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#000000);
+}
+.FrontFontTitle
+{
+	background-color:#66cccc;
+	width:260px;
+	/*font-style : italic;*/
+	font-size : 16px;
+	font-weight : bold;
+	color : black;
+	/*filter : shadow(color=Slategray,direction=120)*/
+	/*filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+	filter: glow(color=006699 strength=1) Chroma(Color=0000ff); font-size: 12px; color: blue 
+ 
+
+}
+
+.FrontTagText
+{
+	width:2px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#66cccc,endColorStr=#66cccc);
+}
+.FrontFontText
+{
+	width:260px;
+	/*font-style : italic;*/
+	font-size : 12px;
+
+	color : black;
+	/*filter : shadow(color=Slategray,direction=120)*/
+	/*filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+	
+
+}
+
+
+.rida
+{
+	font-size: 12px;
+	font-weight:bold;
+	background-color: white;
+		border-bottom-style:dashed;
+	border-bottom-width:1px;
+
+
+}
+.subrida
+{
+	font-size: 12px;
+	background-color: white;
+	color:#666666;
+		border-bottom-style:dashed;
+	border-bottom-width:1px;
+
+}
+.upcolor
+{
+	background-color: white;
+}
+.downcolor
+{
+	background-color: white;
+}
+.maisei
+{
+	border-width:6px;
+	border-bottom-width:4px;
+}
+.lineTd
+{
+
+	font-family: verdana;
+	font-size : 18px;
+	color : black;
+	font-weight:bold;
+	
+	filter : shadow(color=Slategray,direction=120);
+	border-bottom-style:dashed;
+	border-bottom-width:1px;
+	/*filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+}
+.syoukai
+{
+	font-size : 12px;
+	font-weight:bold;
+	color : black;
+	filter : shadow(color=Slategray,direction=120)
+	
+}
+.link
+{
+	font-size : 12px;
+	font-weight:bold;
+	color : white;
+	filter : shadow(color=Slategray,direction=120)
+}
+
+
+.tbl{
+	/*
+	background-color:#4E031E;
+	*/
+
+	font-weight:bold;
+	font-family: verdana;
+	font-size: 30px;
+	color:#FFFFFF;
+/*
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#336666,endColorStr=#00000f);
+*/
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#336666,endColorStr=#ffffff);
+}
+.headerTitleSmall
+{
+
+	font-family: verdana;
+	font-size : 12px;
+	color : black;
+	font-weight:bold;
+	
+	filter : shadow(color=Slategray,direction=120);
+
+	/*filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+}
+.headerTitleLarge
+{
+
+	
+
+	font-family: verdana;
+	font-size : 26px;
+	color : black;
+	font-weight:bold;
+	
+	filter : shadow(color=Slategray,direction=120);
+
+	/*filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+}

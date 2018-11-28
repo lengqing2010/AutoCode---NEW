@@ -1,0 +1,449 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>企業文化活動</title>
+	<meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="../../css/Tostem.css">
+	<link rel="stylesheet" type="text/css" href="../../css/ShowPicScript1.css">
+<style type="text/css">
+	html {
+		overflow: auto;
+	}
+	body {
+		position: absolute;
+		margin: 0px;
+		padding: 0px;
+
+		width: 100%;
+		height: 100%;
+	}
+	#center {
+		position: absolute;
+		left: 840px;
+		top:  430px;
+	}
+	#slider {
+		position: absolute;
+		width: 755px;
+		height: 333px;
+		left: -838px;
+		top: -300px;
+		overflow: hidden;
+		background: #fff;
+		border: 20px solid #000;
+	}
+	#slider .slide {
+		position: absolute;
+		top: 0px;
+		height: 333px;
+		width: 500px;
+		background: #000;
+		overflow: hidden;
+		border-left: #000 solid 1px;
+		cursor: default;
+	}
+	#slider .title   {
+		color: #F80;
+		font-weight: bold;
+		font-size: 1em;
+		margin-right: 1.5em;
+		text-decoration: none;
+	}
+	#slider .backgroundText {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 100%;
+		background: #000;
+		filter: alpha(opacity=40);
+		opacity: 0.4;
+	}
+	#slider .text {
+		position: absolute;
+		top: 1%;
+		top: 100%;
+		color: #FFF;
+		font-family: verdana, arial, Helvetica, sans-serif;
+		font-size: 0.8em;
+		text-align: justify;
+		width: 470px;
+		left: 10px;
+	}
+	#slider .diapo {
+		position: absolute;
+		filter: alpha(opacity=100);
+		opacity: 1;
+		visibility: hidden;
+	}
+</style>
+
+<script type="text/javascript">
+/* ==== slider nameSpace ==== */
+var slider = function() {
+	/* ==== private methods ==== */
+	function getElementsByClass(object, tag, className) {
+		var o = object.getElementsByTagName(tag);
+		for ( var i = 0, n = o.length, ret = []; i < n; i++) {
+			if (o[i].className == className) ret.push(o[i]);
+		}
+		if (ret.length == 1) ret = ret[0];
+		return ret;
+	}
+	function setOpacity (obj,o) {
+		if (obj.filters) obj.filters.alpha.opacity = Math.round(o);
+		else obj.style.opacity = o / 100;
+	}
+	/* ==== Slider Constructor ==== */
+	function Slider(oCont, speed, iW, iH, oP) {
+		this.slides = [];
+		this.over   = false;
+		this.S      = this.S0 = speed;
+		this.iW     = iW;
+		this.iH     = iH;
+		this.oP     = oP;
+		this.oc     = document.getElementById(oCont);
+		this.frm    = getElementsByClass(this.oc, 'div', 'slide');
+		this.NF     = this.frm.length;
+		this.resize();
+		for (var i = 0; i < this.NF; i++) {
+			this.slides[i] = new Slide(this, i);
+		}
+		this.oc.parent = this;
+		this.view      = this.slides[0];
+		this.Z         = this.mx;
+		/* ==== on mouse out event ==== */
+		this.oc.onmouseout = function () {
+			this.parent.mouseout();
+			return false;
+		}
+	}
+	Slider.prototype = {
+		/* ==== animation loop ==== */
+		run : function () {
+			this.Z += this.over ? (this.mn - this.Z) * .5 : (this.mx - this.Z) * .5;
+			this.view.calc();
+			var i = this.NF;
+			while (i--) this.slides[i].move();
+		},
+		/* ==== resize  ==== */
+		resize : function () {
+			this.wh = this.oc.clientWidth;
+			this.ht = this.oc.clientHeight;
+			this.wr = this.wh * this.iW;
+			this.r  = this.ht / this.wr;
+			this.mx = this.wh / this.NF;
+			this.mn = (this.wh * (1 - this.iW)) / (this.NF - 1);
+		},
+		/* ==== rest  ==== */
+		mouseout : function () {
+			this.over      = false;
+			setOpacity(this.view.img, this.oP);
+		}
+	}
+	/* ==== Slide Constructor ==== */
+	Slide = function (parent, N) {
+		this.parent = parent;
+		this.N      = N;
+		this.x0     = this.x1 = N * parent.mx;
+		this.v      = 0;
+		this.loaded = false;
+		this.cpt    = 0;
+		this.start  = new Date();
+		this.obj    = parent.frm[N];
+		this.txt    = getElementsByClass(this.obj, 'div', 'text');
+		this.img    = getElementsByClass(this.obj, 'img', 'diapo');
+		this.bkg    = document.createElement('div');
+		this.bkg.className = 'backgroundText';
+		this.obj.insertBefore(this.bkg, this.txt);
+		if (N == 0) this.obj.style.borderLeft = 'none';
+		this.obj.style.left = Math.floor(this.x0) + 'px';
+		setOpacity(this.img, parent.oP);
+		/* ==== mouse events ==== */
+		this.obj.parent = this;
+		this.obj.onmouseover = function() {
+			this.parent.over();
+			return false;
+		}
+	}
+	Slide.prototype = {
+		/* ==== target positions ==== */
+		calc : function() {
+			var that = this.parent;
+			// left slides
+			for (var i = 0; i <= this.N; i++) {
+				that.slides[i].x1 = i * that.Z;
+			}
+			// right slides
+			for (var i = this.N + 1; i < that.NF; i++) {
+				that.slides[i].x1 = that.wh - (that.NF - i) * that.Z;
+			}
+		},
+		/* ==== HTML animation : move slides ==== */
+		move : function() {
+			var that = this.parent;
+			var s = (this.x1 - this.x0) / that.S;
+			/* ==== lateral slide ==== */
+			if (this.N && Math.abs(s) > .5) {
+				this.obj.style.left = Math.floor(this.x0 += s) + 'px';
+			}
+			/* ==== vertical text ==== */
+			var v = (this.N < that.NF - 1) ? that.slides[this.N + 1].x0 - this.x0 : that.wh - this.x0;
+			if (Math.abs(v - this.v) > .5) {
+				this.bkg.style.top = this.txt.style.top = Math.floor(2 + that.ht - (v - that.Z) * that.iH * that.r) + 'px';
+				this.v = v;
+				this.cpt++;
+			} else {
+				if (!this.pro) {
+					/* ==== adjust speed ==== */
+					this.pro = true;
+					var tps = new Date() - this.start;
+					if(this.cpt > 1) {
+						that.S = Math.max(2, (28 / (tps / this.cpt)) * that.S0);
+					}
+				}
+			}
+			if (!this.loaded) {
+				if (this.img.complete) {
+					this.img.style.visibility = 'visible';
+					this.loaded = true;
+				}
+			}
+		},
+		/* ==== light ==== */
+		over : function () {
+			this.parent.resize();
+			this.parent.over = true;
+			setOpacity(this.parent.view.img, this.parent.oP);
+			this.parent.view = this;
+			this.start = new Date();
+			this.cpt = 0;
+			this.pro = false;
+			this.calc();
+			setOpacity(this.img, 100);
+		}
+	}
+	/* ==== public method - script initialization ==== */
+	return {
+		init : function() {
+			// create instances of sliders here
+			// parameters : HTMLcontainer name, speed (2 fast - 20 slow), Horizontal ratio, vertical text ratio, opacity
+			this.s1 = new Slider("slider", 12, 1.84/3, 1/3.2, 70);
+			setInterval("slider.s1.run();", 16);
+		}
+	}
+}();
+
+</script>
+</head>
+
+<body>
+
+<div style="width:800px; text-align:left;">
+  <table width="792">
+        <tr> 
+            <td width="42">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            </td>
+            <td width="100">
+                <img src="../.././pic/header_logo001.gif" />            </td>
+            <td width="634" rowspan="2" class="headerTitleLarge">  
+                <div align="center">娯楽活動
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            </div></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td>
+            <td class="headerTitleSmall">
+                情報システム部
+            </td>
+        </tr>
+  </table>
+ <table >
+		<tr>
+		<td ><hr></td>
+		</tr>
+		<tr>
+		<tr style=" width:100%;" height="20" bgcolor="#66cccc" style="	border-top: silver 1px solid;">
+		<td bgcolor="#00CCCC" style="text-align:right;" >
+<span style="color: white" height="10" >
+<a href="#" onClick="history.back()" class="link">表紙へ戻る</a></span>
+		
+		</td>
+		</tr>
+		<tr>      
+            <td bgcolor="#CCCCCC"  style="border-top-style:dotted; border-top-width:1px; background-color:#333333; ">
+</td>
+</tr>
+		<tr>
+		<td height="375"  >
+
+		</td>
+		</tr>
+		<tr>
+		<td bgcolor="#00CCCC" style="text-align:right;" >
+<span style="color: white" >&nbsp;</span>
+		
+		</td>
+		</tr>
+<tr>
+		<td class="headerTitleLarge">		    <p>1.文化週活動</p>		</td>
+		</tr>
+		<tr>
+		<td class="headerTitleSmall" style="border-bottom-style:dashed; border-top-style:dotted; border-width:1px; border-color:#00CCCC;">
+		  <div align="left" style="clear : none ;">
+		    <p><img src="../../pic/images/IMG_1438.JPG" width="381" height="262" style="float : left ; border-style:solid; border-width:1px; background-color:#999999">		  	</p>
+<p>バスケットボール：</p>
+<p>一番強大なチーム</p>
+<p>一番団結なチーム</p>
+<p>一番心が通じ合うチーム</p>
+<p>これは私たちのバスケットボールチームです。2008年度文化週のバスケットボール試合で、前年度の優勝チームとしての私たちは</p>
+<p>各強敵の研究の対象になって、首位の座を守ることはとても大変でした。人手不足の状況で、私たちはさまざまな困難を乗り越えて</p>
+<p>各強敵を打ち負かせました。納得できる実力で首位の座を守りました。今、私たちの目標は：３連覇</p>
+<p>	
+
+</td>
+		</tr>
+		
+		<tr>
+		<td class="headerTitleLarge">		    <p></p>		</td>
+		</tr>
+		<tr>
+		<td class="headerTitleSmall" style="border-bottom-style:dashed; border-top-style:dotted; border-width:1px; border-color:#00CCCC;">
+		  <div align="left" style="clear : none ;">
+		    <p><img src="../../pic/images/football.jpg" width="381" height="262" style="float : left ; border-style:solid; border-width:1px; background-color:#999999">		  	</p>
+
+    <p>サッカー：</p>
+<p>世界第一のスポーツといわれるサッカーは情報S部のみんなの大好きなスポーツです。</p>
+<p>定時後に運動場でびっしょりと汗をかく姿がよく見られます。1回/年開かれるトステムサッカーリーグ戦で、</p>
+<p>多くのファンを持っている情報S部チームは体力の上で劣勢にだったが  、 技術力でカバーしながら </p>
+<p>夢のためにいつも必死に頑張リま した 。今年度のリーグ戦で、私たちは前年度の優勝チームを勝って リーグを 突破しました 。</p>
+<p>惜しくも決勝トーナメントで負けてしまいましたが、成長 の兆しが見えてきました。今回の試合は、皆の生活を豊かしただけではなくて、</p>
+<p>活力に富んでいる情報システム部員 のイメージも  アピールできました。 </p>
+<p>	  </div></td>
+		</tr>
+		<tr>
+		<td class="headerTitleLarge">		    <p>2.2008年北京オリンピック聖火リレイー</p>		</td>
+		</tr>
+		<tr>
+		<td class="headerTitleSmall" style="border-bottom-style:dashed; border-top-style:dotted; border-width:1px; border-color:#00CCCC;">
+		  <div align="left" style="clear : none ;">
+		    <p><img src="../../pic/images/066.JPG" width="381" height="262" style="float : left ; border-style:solid; border-width:1px; background-color:#999999">		  	</p>
+
+<p>聖火リレー：</p>
+<p>7月19日　オリンピック聖火は大連に来ました。情報S部のメンバーたちも金石灘に行き、オリンピック聖火リレーの盛況を観覧しました。</p>
+<p>午前8時に、大連発見王国公園から盛大な聖火リレーはスタートし、第一棒、第二棒、第三棒・・・・・・聖火リレー選手が私たちの方に近づいて来る時、
+雰囲気が最高潮に達しました。 ほとんどのメンバーはうれしくして涙をこぼしました。声がかすれましたが、皆は喚声を上げて 応援しつづけて、</p>
+<p>自分のあふれるばかりの熱意をうたい上げました。聖火リレーが終わった後、皆は合い争って聖火リレー選手と記念写真を撮りました。</p>
+<p> 聖火 「祥云」  （シャンウン）は すごく 近い所にあって、神聖な感覚 が皆 を勇気付けました。</p>
+<p>2008年7月19日、大連金石灘聖火リレーは私たちの永遠の追憶になります。</p>
+<p>
+		  </div></td>
+		</tr>
+	<tr>
+		<td class="headerTitleLarge">		    <p>3.夏季海水浴</p>		</td>
+		</tr>
+		<tr>
+		<td class="headerTitleSmall" style="border-bottom-style:dashed; border-top-style:dotted; border-width:1px; border-color:#00CCCC;">
+		  <div align="left" style="clear : none ;">
+		    <p><img src="../../pic/images/DSC00179.JPG" width="381" height="262" style="float : left ; border-style:solid; border-width:1px; background-color:#999999">		  	</p>
+
+<p>海水浴：</p>
+<p>青空、青海、白雲、砂浜</p>
+<p>毎年の夏の海水浴は情報S部のみなさんにとって心身をリラックスする一番いい活動です。金石灘、氷峪溝、麗娇湾などは</p>
+<p>とても人気の高い観光地として、多くの観光客の注目を浴びています。日光を浴びて、そよそよと吹く海風を楽しみます。</p>
+<p>砂浜に遊びの足跡を残して、仕事の疲れを波に持って行かせます。自分で作った食物を味わって、カメラに私たちの笑顔を記録します。</p>
+<p>海は私たちの悩みを持って行き、楽しく思い出を返してきます。</p>
+
+		  </div></td>
+		</tr>
+</table>
+
+ </div>
+
+
+   
+
+</div>
+
+<div id="center">
+	<div id="slider">
+		<div class="slide">
+			<img class="diapo" src="1.jpg" alt="">
+			<div class="text">
+				  <span class="title">Basketball</span>
+				The photo of players. In 2008,<br> basketball game.
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="2.jpg" alt="">
+			<div class="text">
+				<span class="title">Football </span>
+				The photo of players. In 2007,<br> Football game.
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="3.jpg" alt="">
+			<div class="text">
+				  <span class="title">文化週活動</span>
+				  2006年<br>文化週活動
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="4.jpg" alt="">
+			<div class="text">
+				  <span class="title">Basketball</span>
+				The photo of players. In 2007,<br> basketball game.
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="5.jpg" alt="">
+			<div class="text">
+				  <span class="title">文化週活動</span>
+				  2006年<br>文化週活動
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="DSC00179.JPG" alt="">
+			<div class="text">
+				  <span class="title">ハイキング</span>
+				  2007年<br>
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="7.jpg" alt="">
+			<div class="text">
+				  <span class="title">Relay the Olympic torch</span>
+				  2008年<br>北京オリンピック聖火リレイー
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="DSCF5623.jpg" alt="">
+			<div class="text">
+				  <span class="title">山登り</span>
+				  2007年
+			</div>
+		</div>
+<!--		<div class="slide">
+			<img class="diapo" src="7.jpg" alt="">
+			<div class="text">
+				  <span class="title">Relay the Olympic torch</span>
+				  2008年<br>北京オリンピック聖火リレイー
+			</div>
+		</div>
+		<div class="slide">
+			<img class="diapo" src="7.jpg" alt="">
+			<div class="text">
+				  <span class="title">Relay the Olympic torch</span>
+				  2008年<br>北京オリンピック聖火リレイー
+			</div>
+		</div>
+		-->
+	</div>
+</div>
+
+<script type="text/javascript">
+/* ==== start script ==== */
+slider.init();
+</script>
+</body>
+</html>

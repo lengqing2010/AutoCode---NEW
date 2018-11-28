@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery轮播图插件slider-pro|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" /><!--CSS RESET-->
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link rel="stylesheet" type="text/css" href="dist/css/slider-pro.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/examples.css" media="screen"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <style>
+
+
+    .FrontFontText {
+        padding-left: 12px;
+        font-family: 微软雅黑;
+        font-size: 12px;
+        color: #fff;
+        text-shadow: 0px 1px 1px #000;
+        line-height:20px;
+    }
+
+    </style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<div id="example1" class="slider-pro">
+			<div class="sp-slides">
+				<div class="sp-slide">
+					<img class="sp-image" src="../src/css/images/blank.gif"
+						data-src="./images\20180921xiaofangsmall.jpg"
+						/>
+					<p class="sp-layer sp-black sp-padding hide-small-screen FrontFontText " 
+						data-horizontal="40" data-vertical="1%" data-width="350" 
+						data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500" style="margin-top:0px;">
+						2018年9月21日 <br>IT中心の避難訓練演習
+					</p>
+				</div>
+
+
+		        <div class="sp-slide">
+		        	<img class="sp-image" src="../src/css/images/blank.gif"
+		        		data-src="./images\201808liy4small.jpg"/>
+					<p class="sp-layer sp-black sp-padding hide-small-screen FrontFontText" 
+						data-horizontal="40" data-vertical="1%" data-width="350" 
+						data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
+						2018年度 <br>李毅さんの改善表彰
+					</p>
+				</div>
+
+
+		        <div class="sp-slide">
+		        	<img class="sp-image" src="../src/css/images/blank.gif"
+		        		data-src="./images\20180619RPAsmall.jpg"/>
+					<p class="sp-layer sp-black sp-padding hide-small-screen FrontFontText" 
+						data-horizontal="40" data-vertical="1%" data-width="350" 
+						data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
+						2018/6/19～6/20 大連でのRPA教育<br>講師：<br>竹内 瑞樹様、尾上 浩司様、常 鑫様<br>大連側参加者15名
+					</p>
+				</div>
+
+
+		        <div class="sp-slide">
+		        	<img class="sp-image" src="../src/css/images/blank.gif"
+		        		data-src="./images\20180612softsmall.jpg"/>
+					<p class="sp-layer sp-black sp-padding hide-small-screen FrontFontText" 
+						data-horizontal="40" data-vertical="1%" data-width="350" 
+						data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
+						2018年6月12日 <br>中川部付部長第十六回中国国際ソフトウェアと情報サービス交易会に出席(photo from 孫一佳)
+					</p>
+				</div>
+
+
+
+                <div class="sp-slide">
+		        	<img class="sp-image" src="../src/css/images/blank.gif"
+		        		data-src="./images\20180520walking.jpg"/>
+					<p class="sp-layer sp-black sp-padding hide-small-screen FrontFontText" 
+						data-horizontal="40" data-vertical="1%" data-width="350" 
+						data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
+						2018年5月20日 <br>第十六回大連国際ウォーキング大会<br>高木総経理、高橋部長、中川部付部長、<br>徐課長一緒に参加(photo from 徐課長)
+					</p>
+				</div>
+
+
+			</div>
+
+
+	    </div>
+		<div class="related">
+
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="libs/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="dist/js/jquery.sliderPro.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function ($) {
+	        $('#example1').sliderPro({
+	            width: 800,
+	            height: 600,
+	            arrows: true,
+	            buttons: false,
+	            waitForLayers: true,
+	            thumbnailWidth: 200,
+	            thumbnailHeight: 100,
+	            thumbnailPointer: true,
+	            autoplay: true,
+	            autoScaleLayers: false,
+	            breakpoints: {
+	                300: {
+	                    thumbnailWidth: 120,
+	                    thumbnailHeight: 50
+	                }
+	            }
+	        });
+	    });
+	</script>
+</body>
+</html>
