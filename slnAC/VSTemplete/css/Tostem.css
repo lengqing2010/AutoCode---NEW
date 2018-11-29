@@ -1,0 +1,208 @@
+﻿ /*　BODY　*/
+body {
+    margin: 0px;
+    padding: 0px;
+    background:#ffffff;
+    width: 100%;
+    height: 100%;
+	font-family:微软雅黑;
+	font-size:12px;
+	color:#000;
+	text-shadow:0 1px 1px #aaa;
+    text-align:center;
+
+    
+
+}
+
+#divHeader
+{
+    height: 100px;
+    width: 1000px;
+    background-color: #fff;
+    margin:0 auto 0 auto;
+    text-align:center;
+}
+.contanctDiv
+{
+    height: 100px;
+    width: 1000px;
+    background-color: #fff;
+    margin:0 auto 0 auto;
+    text-align:center;
+}
+
+.DivPageTitle
+{
+    width: 800px;
+    top: 370px;
+    height: 4%;
+    
+}
+
+.FrontBlackTitle
+{
+    width:2px;
+  
+}
+.FrontFontTitle
+{
+    width:300px;
+    font-size : 14px;
+    color : #fff;
+    background-color: #333;
+    padding:4px;
+
+}
+
+.FrontTagText
+{
+    width:2px;
+    background-color: #ddd;
+}
+.FrontFontText
+{
+    width:260px;
+    font-size : 12px;
+    color : black;
+    padding:4px;
+    text-align:left;
+}
+
+
+.rida
+{
+    font-size: 12px;
+    font-weight:bold;
+    background-color: white;
+        border-bottom-style:dashed;
+    border-bottom-width:1px;
+	font-family:微软雅黑;
+	font-size:14px;
+	color:#000;
+	text-shadow:0 1px 1px #aaa;
+}
+.subrida
+{
+    font-size: 12px;
+    background-color: white;
+    color:#666666;
+        border-bottom-style:dashed;
+    border-bottom-width:1px;
+
+}
+.upcolor
+{
+    background-color: white;
+}
+.downcolor
+{
+    background-color: white;
+}
+.maisei
+{
+    border-width:6px;
+    border-bottom-width:4px;
+}
+.lineTd
+{
+
+    font-family: verdana;
+    font-size : 18px;
+    color : black;
+    font-weight:bold;
+    filter : shadow(color=Slategray,direction=120);
+    border-bottom-style:dashed;
+    border-bottom-width:1px;
+
+}
+.button
+{
+
+    text-align : left;
+    width : 190px;
+    height : 25px;
+    color : white;
+
+    border-width:0px;
+    background-color:#ff8c00;
+    font-size:18px;
+
+}
+.syoukai
+{
+    font-size : 12px;
+    font-weight:bold;
+    color : black;
+    filter : shadow(color=Slategray,direction=120)
+    
+}
+.link
+{
+    font-size : 12px;
+    font-weight:bold;
+    color : white;
+    filter : shadow(color=Slategray,direction=120)
+}
+
+
+.tbl{
+    /*
+    background-color:#4E031E;
+    */
+
+    font-weight:bold;
+    font-family: verdana;
+    font-size: 30px;
+    color:#FFFFFF;
+/*
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#336666,endColorStr=#00000f);
+*/
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#336666,endColorStr=#ffffff);
+}
+.headerTitleSmall
+{
+
+    font-family: Dotum;
+    font-size : 12px;
+    color : black;
+    font-weight:bold;
+    
+    filter : shadow(color=Slategray,direction=120);*/
+
+    /*filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+}
+.headerTitleLarge
+{
+    font-family: Dotum;
+    font-size : 28px;
+    color : #707070;
+    font-weight:bold;
+    font-family:HGSｺﾞｼｯｸM;
+    /*filter : shadow(color=Slategray,direction=120);
+
+    filter : DropShadow(color=#336633,offX=1,offY=1,positive=false);*/
+}
+/* 2009/02/09 sunz2 追加↓*/
+A.mnlinecode            {color:#CC3300; text-decoration:none; }
+A:link.mnlinecode       {color:#CC3300; text-decoration:none; }
+A:visited.mnlinecode    {color:#CC3300; text-decoration:none; }
+A:active.mnlinecode     {color:#330099; text-decoration:none; }
+
+.aSyokai /* 詳細紹介*/
+{
+ font-weight:normal ;
+ color:#990066;
+}
+         /* 年度*/
+A.nendoline            {color:#CC3300; text-decoration:underline; }
+A:link.nendoline       {color:#CC3300; text-decoration:underline; }
+A:visited.nendoline    {color:#CC3300; text-decoration:underline; }
+A:active.nendoline     {color:#330099; text-decoration:none; }
+/* 2009/02/09 sunz2 追加↓*/
+.titem3 {position: absolute; top: 115px; left:740px;background-color:#ffffcc;
+    border: dashed 3px #ff8800;padding:3;color:#000000;
+    width:140;font-size:9pt;font-weight:normal;text-align:left;}
+.titem2 {position: absolute; top: 690px; left:330px;background-color:#ffffcc;
+    border: dashed 3px #ff8800;padding:3;color:#000000;
+    width:145;font-size:9pt;font-weight:normal;text-align:center;}
